@@ -21,7 +21,7 @@ export default function SSG({ showBanner, isLoadingUser }) {
                   This banner is statically rendered.
                   <br />
                   It is displayed because the `showBanner` flag is true, loaded
-                  using the `useFsFlag` hook executed client-side
+                  using the JS SDK on the `getStaticProps` method
                 </>
               }
             />
@@ -37,7 +37,7 @@ export default function SSG({ showBanner, isLoadingUser }) {
                   This VIP banner is asynchronously loaded.
                   <br />
                   It is displayed because the `showVIPBanner` flag is true,
-                  loaded using the JS SDK on the `getStaticProps` method
+                  loaded using the `useFsFlag` hook executed client-side
                 </>
               }
             />
