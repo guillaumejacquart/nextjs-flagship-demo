@@ -2,6 +2,7 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import { DecisionMode, Flagship, useFsFlag } from "@flagship.io/react-sdk";
 import Banner from "../components/common/Banner";
 import BigButton from "../components/common/BigButton";
+import Code from "../components/common/Code";
 import Loader from "../components/common/Loader";
 import { API_KEY, ENV_ID } from "../config";
 
@@ -52,6 +53,7 @@ export default function SSG({ showBanner, isLoadingUser }) {
           {!displayBigButton && <div>No button</div>}
         </Box>
       </main>
+      <Code path="ssr.js" />
     </div>
   );
 }

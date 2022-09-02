@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node generate.js && next dev",
+    "build": "node generate.js && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,10 +16,13 @@
     "framer-motion": "^6.5.1",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-element-to-jsx-string": "^15.0.0",
+    "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5"
+    "eslint-config-next": "12.2.5",
+    "next-transpile-modules": "^9.0.0"
   }
 }

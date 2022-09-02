@@ -1,9 +1,11 @@
 import { Flagship, useFsFlag } from "@flagship.io/react-sdk";
+import { Box, Heading, Text } from "@chakra-ui/react";
+
 import { API_KEY, ENV_ID } from "../config";
 import BigButton from "../components/common/BigButton";
-import { Box, Heading, Text } from "@chakra-ui/react";
 import Banner from "../components/common/Banner";
 import Loader from "../components/common/Loader";
+import Code from "../components/common/Code";
 
 export default function SSR({ showBanner, isLoadingUser }) {
   const displayBigButton = useFsFlag("displayBigButton", false).getValue(false);
@@ -53,6 +55,7 @@ export default function SSR({ showBanner, isLoadingUser }) {
           {!displayBigButton && <div>No button</div>}
         </Box>
       </main>
+      <Code path="ssr.js" />
     </div>
   );
 }
