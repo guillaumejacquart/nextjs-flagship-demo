@@ -1,10 +1,17 @@
 const fs = require("fs/promises");
+const outputPath = "./public/pages"
 const generateCodes = async () => {
-  await fs.mkdir("./public/pages", {});
+  try {
+    await fs.access(outputPath);
+  } catch (e) {
+    await fs.mkdir(outputPath, {});
+  }
+  const pages = await fs.readdir("./pages", { withFileTypes: true });
   await Promise.all(
-    ["ssr", "ssg"].map((p) =>
-      fs.copyFile(`./pages/${p}.js`, `./public/pages/${p}.js`)
-    )
+    pages
+      .filter((dirent) => dirent.isFile())
+      .map((dirent) => dirent.name)
+      .map((p) => fs.copyFile(`./pages/${p}`, `${outputPath}/${p}`))
   );
 };
 
