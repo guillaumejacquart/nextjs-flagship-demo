@@ -1,18 +1,21 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 import { DecisionMode, Flagship, useFsFlag } from "@flagship.io/react-sdk";
+import BackToHome from "../components/common/BackToHome";
 import Banner from "../components/common/Banner";
 import BigButton from "../components/common/BigButton";
 import Code from "../components/common/Code";
+import FlagshipContext from "../components/common/FlagshipContext";
 import Loader from "../components/common/Loader";
 import { API_KEY, ENV_ID } from "../config";
 
 export default function SSG({ showBanner, isLoadingUser }) {
-  const displayBigButton = useFsFlag("displayBigButton", false).getValue(false);
   const showVIPBanner = useFsFlag("showVIPBanner", false).getValue(false);
   return (
     <div>
       <main>
+        <BackToHome />
         <Heading as="h1">This page is statically rendered</Heading>
+        <FlagshipContext />
         <Box my={8}>
           {showBanner && (
             <Banner
@@ -42,15 +45,6 @@ export default function SSG({ showBanner, isLoadingUser }) {
               }
             />
           )}
-        </Box>
-        <Box my={8}>
-          <Text>
-            This button is shown according to Flagship
-            &quot;displayBigButton&quot; flag, loaded using the `useFsFlag` hook
-            executed during the build time
-          </Text>
-          {displayBigButton && <BigButton />}
-          {!displayBigButton && <div>No button</div>}
         </Box>
       </main>
       <Code path="ssr.js" />

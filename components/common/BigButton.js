@@ -1,3 +1,5 @@
+import { Button } from "@chakra-ui/react";
+
 export default function BigButton() {
-  return <button style={{ fontSize: 24 }}>Big Button</button>;
+  return <Button size={"lg"} colorScheme="green">Big Button</Button>;
 }
