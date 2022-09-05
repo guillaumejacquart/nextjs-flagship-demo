@@ -15,7 +15,7 @@ const Code = ({ path }) => {
 
   return (
     <>
-      <Button onClick={onToggle}>Show code</Button>
+      <Button onClick={onToggle}>{isOpen ? "Hide code" : "Show code"}</Button>
       <Collapse in={isOpen} animateOpacity>
         <Box mt="4" rounded="md" shadow="md">
           <SyntaxHighlighter language="jsx" style={tomorrow}>
