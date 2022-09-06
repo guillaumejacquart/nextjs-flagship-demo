@@ -9,7 +9,6 @@ import Code from "../components/common/Code";
 import FlagshipContext from "../components/common/FlagshipContext";
 
 export default function SSR({ flags: { showBanner } }) {
-  const displayBigButton = useFsFlag("displayBigButton", false).getValue(false);
   const showVIPBanner = useFsFlag("showVIPBanner", false).getValue(false);
 
   return (

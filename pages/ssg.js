@@ -32,7 +32,7 @@ export default function SSG({ showBanner, isLoadingUser }) {
         </Box>
         <Box my={8}>
           {isLoadingUser && <Loader text="Loading user..." />}
-          {showVIPBanner && (
+          {!isLoadingUser && showVIPBanner && (
             <Banner
               bg="green"
               text={
