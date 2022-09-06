@@ -2,7 +2,7 @@ import { Box, Center, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 const DemoLink = ({ href, title, text }) => (
-  <Center w={400}>
+  <Center>
     <Link href={href}>
       <a>
         <Box

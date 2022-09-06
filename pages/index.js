@@ -7,6 +7,7 @@ import {
   Heading,
   HStack,
   ListItem,
+  SimpleGrid,
   Table,
   TableContainer,
   Tbody,
@@ -39,7 +40,7 @@ export default function Home() {
           <Box display="inline-block" top="12px" position="relative">
             <Image src={nextPic} width={100} height={50} alt="Next.js" />
           </Box>
-        </a>{" "}
+        </a>
         <Text
           display="inline-block"
           fontStyle="italic"
@@ -52,7 +53,7 @@ export default function Home() {
           <Box display="inline-block" top="12px" position="relative">
             <Image
               src={logoPic}
-              width={200}
+              width={180}
               height={50}
               alt="Flagship platform"
             />
@@ -91,7 +92,7 @@ export default function Home() {
       <Heading as="h2" mt={12} fontSize="lg">
         Data fetching mode implementation:
       </Heading>
-      <HStack alignItems="center" justifyContent="center" my={4}>
+      <SimpleGrid minChildWidth="250px" spacing="20px" my={4}>
         <DemoLink
           href="/ssr"
           title="SSR Example"
@@ -107,7 +108,7 @@ export default function Home() {
           title="CSR Example"
           text="Go to the Client-side rendering example"
         />
-      </HStack>
+      </SimpleGrid>
 
       <Heading as="h3" fontSize="lg" mt={12}>
         What are data fetching modes?
@@ -128,13 +129,7 @@ export default function Home() {
           </Button>
           .
         </Text>
-        <HStack
-          justifyContent="center"
-          alignItems="stretch"
-          spacing="16px"
-          width="100%"
-          my={4}
-        >
+        <SimpleGrid minChildWidth="250px" spacing="20px" my={4}>
           <FetchModeDefinition
             name="Server-Side Rendering (SSR)"
             description={
@@ -169,7 +164,7 @@ export default function Home() {
             }
             value="true"
           />
-        </HStack>
+        </SimpleGrid>
 
         <Text mt={12}>
           These different data fetching methods comes with advantages and
