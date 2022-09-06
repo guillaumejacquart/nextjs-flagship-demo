@@ -85,7 +85,6 @@ export async function getServerSideProps(context) {
   await visitor?.fetchFlags();
   const showBanner = visitor.getFlag("showBanner", false).getValue(false);
 
-  console.log(visitor?.getFlagsDataArray());
   return {
     props: {
       initialFlagsData: visitor?.getFlagsDataArray(),
