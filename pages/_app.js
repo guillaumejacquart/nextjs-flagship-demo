@@ -65,11 +65,7 @@ function MyApp({ Component, pageProps }) {
       envId={ENV_ID}
       apiKey={API_KEY}
       pollingInterval={60}
-      decisionMode={
-        pageProps.decisionMode === "bucketing"
-          ? DecisionMode.BUCKETING
-          : DecisionMode.DECISION_API
-      }
+      decisionMode={pageProps.decisionMode || DecisionMode.DECISION_API}
     >
       <ChakraProvider>
         <Head>

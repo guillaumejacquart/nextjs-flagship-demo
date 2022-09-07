@@ -7,6 +7,8 @@ import BigButton from "../components/common/BigButton";
 import Banner from "../components/common/Banner";
 import Code from "../components/common/Code";
 import FlagshipContext from "../components/common/FlagshipContext";
+import ServerSideJSBanner from "../components/common/Banners/ServerSideJS";
+import ServerSideReactBanner from "../components/common/Banners/ServerSideReact";
 
 export default function SSR({ flags: { showBanner } }) {
   const showVIPBanner = useFsFlag("showVIPBanner", false).getValue(false);
@@ -17,39 +19,8 @@ export default function SSR({ flags: { showBanner } }) {
         <BackToHome />
         <Heading as="h1">This page is server-side rendered</Heading>
         <FlagshipContext />
-        <Box my={8}>
-          {showBanner && (
-            <Banner
-              text={
-                <>
-                  This banner is server-side rendered.
-                  <br />
-                  It is displayed because the `showBanner` flag is true, loaded
-                  using the JS SDK on the `getServerSideProps` method
-                  <br />
-                  You can check that the banner is present on the HTML generated
-                  source (Right click &amp; &quot;View page source&quot;)
-                </>
-              }
-            />
-          )}
-        </Box>
-        <Box my={8}>
-          {showVIPBanner && (
-            <Banner
-              bg="green"
-              text={
-                <>
-                  This VIP banner is loaded server-side.
-                  <br />
-                  It is displayed because the `showVIPBanner` flag is true,
-                  loaded using the `useFsFlag` hook executed during the
-                  server-side rendering
-                </>
-              }
-            />
-          )}
-        </Box>
+        <Box my={8}>{showBanner && <ServerSideJSBanner />}</Box>
+        <Box my={8}>{showVIPBanner && <ServerSideReactBanner />}</Box>
       </main>
       <Code path="ssr.js" />
     </div>

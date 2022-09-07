@@ -35,6 +35,7 @@ export default function Home() {
         textAlign="center"
         alignItems="center"
         lineHeight={"1.5"}
+        fontSize="3xl"
       >
         <a href="https://nextjs.org" target="_blank" rel="noreferrer">
           <Box display="inline-block" top="12px" position="relative">
@@ -60,7 +61,7 @@ export default function Home() {
           </Box>
         </a>
         <br />
-        Implementation Demo
+        Data fetching modes implementation
       </Heading>
 
       <Box my={2}>
@@ -94,9 +95,9 @@ export default function Home() {
       </Heading>
       <SimpleGrid minChildWidth="250px" spacing="20px" my={4}>
         <DemoLink
-          href="/ssr"
-          title="SSR Example"
-          text="Go to the Server-Side rendering example"
+          href="/csr"
+          title="CSR Example"
+          text="Go to the Client-side rendering example"
         />
         <DemoLink
           href="/ssg"
@@ -104,9 +105,9 @@ export default function Home() {
           text="Go to the Static-Side generated example"
         />
         <DemoLink
-          href="/csr"
-          title="CSR Example"
-          text="Go to the Client-side rendering example"
+          href="/ssr"
+          title="SSR Example"
+          text="Go to the Server-Side rendering example"
         />
       </SimpleGrid>
 
@@ -215,7 +216,7 @@ export default function Home() {
                     <ListItem>
                       Renders an already flagged HTML page:
                       <br />
-                      No loading state of flickering on page load
+                      No loading state or flickering on page load
                     </ListItem>
                   </UnorderedList>
                 </Td>

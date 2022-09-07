@@ -6,8 +6,9 @@ const FlagDefinition = ({ name, targeting, value, defaultValue }) => (
     bg="gray.50"
     p={3}
     border="1px"
-    borderColor="blackAlpha.300"
+    borderColor="gray.200"
     borderRadius={8}
+    boxShadow="lg"
   >
     <Text>
       <Text as="span" fontWeight="bold">

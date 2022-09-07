@@ -1,8 +1,14 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Highlight,
+  Text,
+  Code as ChakraCode,
+} from "@chakra-ui/react";
 import { DecisionMode, Flagship, useFsFlag } from "@flagship.io/react-sdk";
 import BackToHome from "../components/common/BackToHome";
-import Banner from "../components/common/Banner";
-import BigButton from "../components/common/BigButton";
+import StaticBanner from "../components/common/Banners/Static";
+import AsynchronousBanner from "../components/common/Banners/Asynchrounous";
 import Code from "../components/common/Code";
 import FlagshipContext from "../components/common/FlagshipContext";
 import Loader from "../components/common/Loader";
@@ -16,35 +22,10 @@ export default function SSG({ showBanner, isLoadingUser }) {
         <BackToHome />
         <Heading as="h1">This page is statically rendered</Heading>
         <FlagshipContext />
+        {showBanner && <StaticBanner />}
         <Box my={8}>
-          {showBanner && (
-            <Banner
-              text={
-                <>
-                  This banner is statically rendered.
-                  <br />
-                  It is displayed because the `showBanner` flag is true, loaded
-                  using the JS SDK on the `getStaticProps` method
-                </>
-              }
-            />
-          )}
-        </Box>
-        <Box my={8}>
-          {isLoadingUser && <Loader text="Loading user..." />}
-          {!isLoadingUser && showVIPBanner && (
-            <Banner
-              bg="green"
-              text={
-                <>
-                  This VIP banner is asynchronously loaded.
-                  <br />
-                  It is displayed because the `showVIPBanner` flag is true,
-                  loaded using the `useFsFlag` hook executed client-side
-                </>
-              }
-            />
-          )}
+          {isLoadingUser && <Loader text="Loading the user profile..." />}
+          {!isLoadingUser && showVIPBanner && <AsynchronousBanner />}
         </Box>
       </main>
       <Code path="ssr.js" />

@@ -10,9 +10,10 @@ const DemoLink = ({ href, title, text }) => (
             bg: "gray.100",
           }}
           border="1px"
-          borderColor="darkgray"
+          borderColor="gray.300"
           p={4}
           borderRadius="4px"
+          boxShadow="lg"
         >
           <Heading as="h2" textAlign="center">
             {title}

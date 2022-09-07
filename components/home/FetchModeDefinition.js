@@ -6,8 +6,9 @@ const FetchModeDefinition = ({ name, description, value }) => (
     bg="gray.50"
     p={3}
     border="1px"
-    borderColor="blackAlpha.300"
+    borderColor="gray.300"
     borderRadius={8}
+    boxShadow="lg"
   >
     <Text fontWeight="bold" mb={2}>
       {name}
