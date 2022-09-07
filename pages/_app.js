@@ -1,4 +1,11 @@
-import { ChakraProvider, Container } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ChakraProvider,
+  Container,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { DecisionMode, FlagshipProvider } from "@flagship.io/react-sdk";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -13,6 +20,7 @@ function MyApp({ Component, pageProps }) {
   const [isVip, setIsVip] = useState(false);
   const [isLoadingUser, setIsLoadingUser] = useState(false);
   const [loadingPage, setLoadingPage] = useState(false);
+  const [containerClass, setContainerClass] = useState("");
 
   useEffect(() => {
     const start = () => setLoadingPage(true);
@@ -36,6 +44,12 @@ function MyApp({ Component, pageProps }) {
       setIsLoadingUser(false);
     }, 5000);
   }, [router.pathname]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setContainerClass(document.documentElement.scrollTop && "scrolled");
+    });
+  }, []);
 
   const visitorData = pageProps.initialVisitorData || {
     visitor_id: "1",
@@ -67,11 +81,31 @@ function MyApp({ Component, pageProps }) {
           ></meta>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Container maxW="4xl" mt={8}>
+        <Container maxW="4xl" pt={8} id="main" className={containerClass}>
           {loadingPage && <Loader />}
           {!loadingPage && (
             <Component {...pageProps} isLoadingUser={isLoadingUser} />
           )}
+
+          <Box bg="gray.100" color="gray.900" p={4} mt={6} className="footer">
+            <Stack
+              maxW={"6xl"}
+              direction={{ base: "column", md: "row" }}
+              spacing={4}
+              justify={{ base: "center", md: "space-between" }}
+              align={{ base: "center", md: "center" }}
+            >
+              <Text>© 2022 Flagship. All rights reserved</Text>
+              <Button
+                as="a"
+                variant="link"
+                href="https://docs.developers.flagship.io"
+                color="gray.700"
+              >
+                Go to the developers documentation
+              </Button>
+            </Stack>
+          </Box>
         </Container>
       </ChakraProvider>
     </FlagshipProvider>
