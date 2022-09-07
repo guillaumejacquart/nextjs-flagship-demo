@@ -7,5 +7,5 @@ apps:
   - name: nextjs-flagship-demo
     path: ""
     text-resources:
-      - path: "*.tsx"
+      - path: "*.js"
         format: react-hardcoded
