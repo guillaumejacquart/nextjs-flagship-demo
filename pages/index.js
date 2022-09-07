@@ -93,7 +93,7 @@ export default function Home() {
       <Heading as="h2" mt={12} fontSize="lg">
         Data fetching mode implementation:
       </Heading>
-      <SimpleGrid minChildWidth="250px" spacing="20px" my={4}>
+      <SimpleGrid minChildWidth="350px" spacing="20px" my={4}>
         <DemoLink
           href="/csr"
           title="CSR Example"
@@ -108,6 +108,11 @@ export default function Home() {
           href="/ssr"
           title="SSR Example"
           text="Go to the Server-Side rendering example"
+        />
+        <DemoLink
+          href="/middleware"
+          title="Middleware"
+          text="Go to the Middleware example"
         />
       </SimpleGrid>
 
