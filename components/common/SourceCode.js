@@ -5,6 +5,7 @@ import githubLogo from "../../public/github.svg";
 
 const SourceCode = () => (
   <Button
+    as="a"
     size="sm"
     href="https://github.com/guillaumejacquart/nextjs-flagship-demo"
     target="_blank"
