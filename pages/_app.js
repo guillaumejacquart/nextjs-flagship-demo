@@ -11,6 +11,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Loader from "../components/common/Loader";
+import SourceCode from "../components/common/SourceCode";
 import { API_KEY, ENV_ID } from "../config";
 import "../styles/globals.css";
 
@@ -92,14 +93,18 @@ function MyApp({ Component, pageProps }) {
               align={{ base: "center", md: "center" }}
             >
               <Text>© 2022 Flagship. All rights reserved</Text>
-              <Button
-                as="a"
-                variant="link"
-                href="https://docs.developers.flagship.io"
-                color="gray.700"
-              >
-                Go to the developers documentation
-              </Button>
+              <Box>
+                <SourceCode />
+                <Button
+                  ml={8}
+                  as="a"
+                  variant="link"
+                  href="https://docs.developers.flagship.io"
+                  color="gray.700"
+                >
+                  Go to the developers documentation
+                </Button>
+              </Box>
             </Stack>
           </Box>
         </Container>

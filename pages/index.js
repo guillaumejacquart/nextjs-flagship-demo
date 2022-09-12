@@ -19,6 +19,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import SourceCode from "../components/common/SourceCode";
 import DemoLink from "../components/home/DemoLink";
 import FetchModeDefinition from "../components/home/FetchModeDefinition";
 import FlagDefinition from "../components/home/FlagDefinition";
@@ -87,6 +88,10 @@ export default function Home() {
             Javascript SDKs
           </Button>{" "}
           in the context of Next.js.
+        </Text>
+
+        <Text>
+          You can see the source code here: <SourceCode />
         </Text>
       </Box>
 

@@ -19,8 +19,8 @@ export default function SSR({ flags: { showBanner } }) {
         <BackToHome />
         <Heading as="h1">This page is server-side rendered</Heading>
         <FlagshipContext />
-        <Box my={8}>{showBanner && <ServerSideJSBanner />}</Box>
-        <Box my={8}>{showVIPBanner && <ServerSideReactBanner />}</Box>
+        {showBanner && <ServerSideJSBanner />}
+        {showVIPBanner && <ServerSideReactBanner />}
       </main>
       <Code path="ssr.js" />
     </div>
