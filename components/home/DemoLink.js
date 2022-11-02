@@ -1,8 +1,14 @@
-import { Box, Center, Heading, Text } from "@chakra-ui/react";
+import { Badge, Box, Center, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
-const DemoLink = ({ href, title, text }) => (
-  <Center justifySelf="center">
+const DemoLink = ({ href, title, text, isNew }) => (
+  <Center justifySelf="center" position="relative">
+    {isNew && (
+      <Box position="absolute" top="-10px" right="10px" display="flex">
+        <Badge shadow="sm" colorScheme="green" marginRight={2} fontSize="md">New</Badge>
+        <Badge shadow="sm" colorScheme="purple" fontSize="md">Alpha</Badge>
+      </Box>
+    )}
     <Link href={href}>
       <a>
         <Box

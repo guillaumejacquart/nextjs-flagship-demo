@@ -1,6 +1,7 @@
 import {
   Alert,
   AlertIcon,
+  Badge,
   Box,
   Button,
   Code,
@@ -98,7 +99,7 @@ export default function Home() {
       <Heading as="h2" mt={12} fontSize="lg">
         Data fetching mode implementation:
       </Heading>
-      <SimpleGrid minChildWidth="350px" spacing="20px" my={4}>
+      <SimpleGrid minChildWidth="350px" spacing="40px" my={4}>
         <DemoLink
           href="/csr"
           title="CSR Example"
@@ -118,6 +119,7 @@ export default function Home() {
           href="/middleware"
           title="Middleware"
           text="Go to the Middleware example"
+          isNew
         />
       </SimpleGrid>
 

@@ -84,23 +84,32 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} isLoadingUser={isLoadingUser} />
           )}
 
-          <Box bg="gray.100" color="gray.900" p={4} mt={6} className="footer">
+          <Box
+            bg="gray.100"
+            color="gray.900"
+            p={{ base: 2, md: 4 }}
+            mt={6}
+            className="footer"
+          >
             <Stack
               maxW={"6xl"}
               direction={{ base: "column", md: "row" }}
-              spacing={4}
+              spacing={{ base: 2, md: 4 }}
               justify={{ base: "center", md: "space-between" }}
               align={{ base: "center", md: "center" }}
+              fontSize={{ base: "xs", md: "sm", lg: "md" }}
             >
               <Text>© 2022 Flagship. All rights reserved</Text>
-              <Box>
+              <Box textAlign="center">
                 <SourceCode />
                 <Button
-                  ml={8}
+                  ml={{ base: 0, md: 8 }}
+                  mt={{ base: 2, md: 0 }}
                   as="a"
                   variant="link"
                   href="https://docs.developers.flagship.io"
                   color="gray.700"
+                  fontSize={{ base: "xs", md: "sm", lg: "md" }}
                 >
                   Go to the developers documentation
                 </Button>
